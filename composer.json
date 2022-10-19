@@ -1,0 +1,43 @@
+{
+    "name": "visanduma/nova-back-navigation",
+    "description": "The missing Back button of NOVA",
+    "keywords": [
+        "laravel",
+        "nova",
+        "visanduma",
+        "back"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Visanduma R & D (pvt) Ltd",
+            "email": "info@visanduma.com",
+            "role": "Owner"
+        },
+        {
+            "name": "LaHiRu",
+            "email": "lahirulhr@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Visanduma\\NovaBackNavigation\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Visanduma\\NovaBackNavigation\\ToolServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
