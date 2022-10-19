@@ -2,7 +2,7 @@
 
 # Laravel Nova back navigation 
 
-The missing back button for laravel nova
+The missing back button for laravel nova 4
 
 This back button uses javascript `history(-1)` method for navigation. Back button will be automatically attached to the default `Card` component.
 so additional configuration needed
