@@ -1,6 +1,6 @@
 <p align="center">
 
-<img src="https://github.com/Visanduma/nova-back-navigation/blob/42b5b5576f0761310dabbb8b358089785e43ceb7/resources/img/banner.jpeg?raw=true" />
+<img src="https://github.com/Visanduma/nova-back-navigation/blob/42b5b5576f0761310dabbb8b358089785e43ceb7/resources/img/banner.png?raw=true" />
 
 </p>
 
