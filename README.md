@@ -1,3 +1,9 @@
+<p align="center">
+
+<img src="https://github.com/Visanduma/nova-back-navigation/blob/42b5b5576f0761310dabbb8b358089785e43ceb7/resources/img/banner.jpeg?raw=true" />
+
+</p>
+
 [![Latest Stable Version](http://poser.pugx.org/visanduma/nova-back-navigation/v)](https://packagist.org/packages/visanduma/nova-back-navigation) [![Total Downloads](http://poser.pugx.org/visanduma/nova-back-navigation/downloads)](https://packagist.org/packages/visanduma/nova-back-navigation) [![Latest Unstable Version](http://poser.pugx.org/visanduma/nova-back-navigation/v/unstable)](https://packagist.org/packages/visanduma/nova-back-navigation) [![License](http://poser.pugx.org/visanduma/nova-back-navigation/license)](https://packagist.org/packages/visanduma/nova-back-navigation) [![PHP Version Require](http://poser.pugx.org/visanduma/nova-back-navigation/require/php)](https://packagist.org/packages/visanduma/nova-back-navigation)
 
 # Laravel Nova back navigation 
