@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-show="backAble" class="bg-white rounded-t-lg p-4 flex justify-between">
+        <div v-show="backAble" class="bg-white dark:bg-gray-800 rounded-t-lg p-4 flex justify-between">
             <div class="mr-4">
                 <Tooltip>
                     <template #content>Back</template>
