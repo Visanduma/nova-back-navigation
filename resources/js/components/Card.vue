@@ -25,6 +25,12 @@ export default {
 
     computed: {
         backAble() {
+        
+ 	//hide back btn if it is Nova Card
+            if (this.$parent.$props.card){
+                return false
+            }
+            
             return Nova.config('backAble')
         },
 
