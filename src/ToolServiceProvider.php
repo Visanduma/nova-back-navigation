@@ -2,6 +2,7 @@
 
 namespace Visanduma\NovaBackNavigation;
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
@@ -18,6 +19,9 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        $this->loadJsonTranslationsFrom(lang_path('vendor/nova-back-navigation'));
+
         $this->app->booted(function () {
             $this->routes();
         });
@@ -29,6 +33,17 @@ class ToolServiceProvider extends ServiceProvider
         });
 
 
+        $this->publishes([
+            __DIR__.'/../resources/lang' => lang_path('vendor/nova-back-navigation')
+        ], 'translations');
+
+
+        Nova::serving(function (ServingNova $event) {
+            $localeFile = lang_path('vendor/nova-back-navigation/' . app()->getLocale() . '.json');
+            if (File::exists($localeFile)) {
+                Nova::translations($localeFile);
+            }
+        });
     }
 
     /**
@@ -57,6 +72,5 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
     }
 }
