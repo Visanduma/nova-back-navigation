@@ -41,7 +41,13 @@ public function tools()
     
 ```
 
-3) Great !. you are done
+3) Publish language files (optional)
+
+```
+php artisan vendor:publish --provider="Visanduma\NovaBackNavigation\ToolServiceProvider"
+```
+
+4) Great !. you are done
 
 
 
