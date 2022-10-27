@@ -1,17 +1,16 @@
 <template>
-    <div class="flex items-center">
-        <div v-show="backAble" class="mr-4">
-            <Tooltip>
-                <template #content>Back</template>
-                <Icon role="button" @click="navigateBack()" type="arrow-left" :solid="true" />
-            </Tooltip>
-
-        </div>
-        <component :is="component" :class="classes">
+    <div class="flex items-center justify-start">
+        <Tooltip v-show="backAble" class="mr-4" :class="{'mb-3': !hasText}">
+            <template #content>Back</template>
+            <Icon role="button" @click="navigateBack()" type="arrow-left" :solid="true" />
+        </Tooltip>
+        <component v-if="! hasText" v-bind="$attrs" :is="component" :class="classes">
             <slot />
         </component>
     </div>
-
+    <component v-if="hasText" v-bind="$attrs" :is="component" :class="classes">
+        <slot />
+    </component>
 </template>
 
 <script>
@@ -30,8 +29,9 @@ export default {
         },
     },
 
-    mounted(){
+    mounted() {
 
+        console.log(this.$parent.$attrs)
 
     },
 
@@ -41,7 +41,7 @@ export default {
             history.back()
         },
 
-        addHtmlContent(){
+        addHtmlContent() {
             //
         }
     },
@@ -57,6 +57,10 @@ export default {
         backAble() {
             console.log(this.$attrs)
             return Nova.config('backAble')
+        },
+
+        hasText(){
+            return this.$attrs.textContent != null
         }
     },
 }
