@@ -10,7 +10,7 @@
 
 The missing *Back button* of laravel nova 4
 
-This back button uses javascript `history(-1)` method for navigation. Back button will be automatically attached to the default `Card` component.
+This back button uses javascript `history.back()` method for navigation. Back button will be automatically attached to the default `Card` component.
 so additional configuration not needed
 
 ![screenshot](/resources/img/sc-1.png)
@@ -41,13 +41,34 @@ public function tools()
     
 ```
 
-3) Publish language files (optional)
+3) Publish language & config files (optional)
 
 ```
 php artisan vendor:publish --provider="Visanduma\NovaBackNavigation\ToolServiceProvider"
 ```
 
 4) Great !. you are done
+
+
+### Configure any urls to show the back button
+
+``` php
+<?php
+
+// config for nova back button
+
+return [
+    /*
+    Enable back button for following routes
+    */
+    'enabled_urls' => [
+
+        "nova/resources/*/*",
+
+    ]
+];
+
+```
 
 
 
