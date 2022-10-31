@@ -3,7 +3,6 @@
 namespace Visanduma\NovaBackNavigation;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Menu\MenuSection;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
 
