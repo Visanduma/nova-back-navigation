@@ -19,7 +19,6 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
         $this->loadJsonTranslationsFrom(lang_path('vendor/nova-back-navigation'));
 
         $this->app->booted(function () {
@@ -28,7 +27,7 @@ class ToolServiceProvider extends ServiceProvider
 
         Nova::serving(function (ServingNova $event) {
             Nova::provideToScript([
-                'backAble' => count(request()->segments()) > 3
+                'backAble' => request()->is(config('nova-back.enabled_urls', []))
             ]);
         });
 
@@ -36,6 +35,12 @@ class ToolServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/lang' => lang_path('vendor/nova-back-navigation')
         ], 'translations');
+
+
+        $this->publishes([
+            __DIR__.'/../config/nova-back.php' => config_path('nova-back.php')
+        ], 'configs');
+
 
 
         Nova::serving(function (ServingNova $event) {
@@ -72,5 +77,6 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__ . '/../config/nova-back.php', 'nova-back');
     }
 }
